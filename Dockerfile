@@ -13,7 +13,7 @@ RUN     set -x && \
         cd /build/prometheus_varnish_exporter && \
         go build -ldflags="-w -s" && \
         strip --strip-unneeded prometheus_varnish_exporter && \
-        upx -q -9 prometheus_varnish_exporter && \
+        upx -q --best prometheus_varnish_exporter && \
         upx -t prometheus_varnish_exporter && \
         rm -rf /tmp/* /var/cache/apk/*
 
